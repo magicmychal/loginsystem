@@ -1,7 +1,9 @@
 <?php session_start(); 
+// this is an adress of the website that the file is in. Thanks to that I don't have to change URL from my localhost ot my domain
+$url =  'http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/login.php';
 if (!isset($_SESSION['userid'])){
 	header('HTTP/1.1 303 See other');
-	header('LOCATION: http://projects.michaeldesign.pl/loginsystem/login.php');
+	header('LOCATION:'.$url);
 }
 ?>
 <!doctype html>
@@ -29,6 +31,11 @@ if (!isset($_SESSION['userid'])){
 		<p>
 		  Sometimes we ended up in the place where we wouldn&#39;t like to end up
 		</p>
+   		<p>
+   			Website is created by <b>Michał Pawlicki, MIL2017</b><br>
+   			Source files and documentation is available on <a href="https://github.com/magicmychal/loginsystem" target="_blank">Github.</a><br>
+			The glitch effect is made by <a href="https://codepen.io/davedehaan/pen/Jeuxq?q=404&limit=all&type=type-pens" target="_blank">Dave DeHaan, it&#39;s available on Code Pen and it&#39;s under the MIT license</a>
+    		</p>
 	   <!-- Extra spacing! -->
 	  <br />
 	  <br />

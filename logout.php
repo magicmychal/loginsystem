@@ -1,4 +1,5 @@
-<?php session_start(); ?>
+<?php session_start();
+$url =  'http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/login.php'; ?>
 <!doctype html>
 <html>
 <head>
@@ -18,7 +19,7 @@
 			$params['secure'], $params['httponly']
 			);
 		header('HTTP/1.1 303 See other');
-		header('LOCATION: http://projects.michaeldesign.pl/loginsystem/login.php');
+		header('LOCATION:'.$url);	
 	}
 	else{
 		echo 'It looks like you are already logged out';
